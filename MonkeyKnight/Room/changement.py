@@ -1,5 +1,3 @@
-
-
 def ouverture(dossier):
         r=open(dossier,"r")
         r=r.read()
@@ -40,5 +38,4 @@ for i in c:
     for j in i:
        sr+=j+","
     sr=sr[:-1]+'@'
-print(sr)
 b.write(sr)

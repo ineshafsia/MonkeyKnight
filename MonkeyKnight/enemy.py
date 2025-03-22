@@ -21,7 +21,7 @@ type table:
 
 class Ennemy:
     def __init__(self,x,y,dmg,hp,mv,type,aggression):
-        data=ouverture("Data\dataenemy.txt")
+        data=ouverture("Data/dataenemy.txt")
         self.xs = pose[1]*64
         self.ys = pose[0]*64
         self.xs=[pose[1],pose[1]+1]
@@ -34,15 +34,15 @@ class Ennemy:
         self.state = True
         self.direction = '+'
         self.by = y
-        self.imgimo=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"\A1.png"),(64,64))
+        self.imgimo=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"/A1.png"),(64,64))
         self.imgimoret=pygame.transform.flip(self.imgimo,True,False)
-        self.img1=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"\A2.png"),(64,64))
+        self.img1=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"/A2.png"),(64,64))
         self.img1ret=pygame.transform.flip(self.img1,True,False)
-        self.img2=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"\A3.png"),(64,64))
+        self.img2=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"/A3.png"),(64,64))
         self.img2ret=pygame.transform.flip(self.img2,True,False)
-        self.img3=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"\A4.png"),(64,64))
+        self.img3=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"/A4.png"),(64,64))
         self.img3ret=pygame.transform.flip(self.img3,True,False)
-        self.img4=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"\A5.png"),(64,64))
+        self.img4=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"/A5.png"),(64,64))
         self.img4ret=pygame.transform.flip(self.img3,True,False)
         
     def movement(self):

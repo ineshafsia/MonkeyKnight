@@ -104,15 +104,15 @@ def choice2(Player,typ,xs,ys,direction):
         return spell(xs,ys,direction,"attaque.png",7,["Size","Stun"],10)
     
     elif typ==2:
-        return other(xs,ys,direction,"data\Attaque/cible.png",["other","*4","enemy"],5)
+        return other(xs,ys,direction,"data/Attaque/cible.png",["other","*4","enemy"],5)
     elif typ==3:
-        return spell(xs,ys,direction,"data\Attaque/ping.png",5,"*2 freeze",10)
+        return spell(xs,ys,direction,"data/Attaque/ping.png",5,"*2 freeze",10)
     elif typ==4:
         return other(xs,ys,direction,"attaque.png",["other","Trap","immobile"],10)
     elif typ==5:
-        return other(xs,ys,direction,"data\Attaque/cible.png",["other","copy","enemy"],5)
+        return other(xs,ys,direction,"data/Attaque/cible.png",["other","copy","enemy"],5)
     elif typ==6:
-        return coupbasique(xs,ys,direction,"Data\Attaque/slashTM.png",("armor","*2"),25)
+        return coupbasique(xs,ys,direction,"Data/Attaque/slashTM.png",("armor","*2"),25)
 def choice3(Player,typ,xs,ys,direction):
     if typ==0:
         

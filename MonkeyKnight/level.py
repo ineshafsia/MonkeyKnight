@@ -11,11 +11,10 @@ class enemy():
         self.xs=[x,x+1]
         self.ys=[y,y+1]
         self.type=typ
-        dataenemy,none=ouverture("data\dataenemy.txt")
-        print(dataenemy[typ-1])
-        self.imgimo=pygame.transform.scale(pygame.image.load(dataenemy[self.type-1][0]+"\A1.png"),(64,64))
+        dataenemy,none=ouverture("data/dataenemy.txt")
+        self.imgimo=pygame.transform.scale(pygame.image.load(dataenemy[self.type-1][0]+"/A1.png"),(64,64))
         self.imgimoret=pygame.transform.flip(self.imgimo,True,False)
-        self.img1=pygame.transform.scale(pygame.image.load(dataenemy[self.type-1][0]+"\A2.png"),(64,64))
+        self.img1=pygame.transform.scale(pygame.image.load(dataenemy[self.type-1][0]+"/A2.png"),(64,64))
         self.img1ret=pygame.transform.flip(self.img1,True,False)
         self.dmg=int(dataenemy[typ-1][1])
         self.hp=int(dataenemy[typ-1][2])
@@ -191,7 +190,7 @@ class salle():
         self.datasalle=data
         self.dataimg=self.datasalle
         self.background=pygame.image.load(b)
-        dataimage,none=ouverture("Data\dataimage.txt")
+        dataimage,none=ouverture("Data/dataimage.txt")
         self.dataimg=[]
         self.enemy=[]
         self.choice=[]
@@ -208,9 +207,9 @@ class salle():
                     k=randint(1,6)
                     while k in self.choice2 or k==1:
                         k=randint(1,6)
-                    data2=ouverture("Data\datapersonnage.txt")
+                    data2=ouverture("Data/datapersonnage.txt")
                     self.choice2.append(k)
-                    self.choice.append([pygame.transform.scale(pygame.image.load(data2[0][k][0]+"\A1.png"), (64,64)),[j*64,i*64],k])
+                    self.choice.append([pygame.transform.scale(pygame.image.load(data2[0][k][0]+"/A1.png"), (64,64)),[j*64,i*64],k])
                 if self.datasalle[i][j][:2]=="02":
                     a=str(randint(1,5))
                     l.append(pygame.image.load(dataimage[0][int(self.datasalle[i][j][:2])]+a+".png"))
@@ -247,7 +246,7 @@ class Etage():
 
 class player():
     def __init__(self,pose,typ):
-        data=ouverture("Data\datapersonnage.txt")
+        data=ouverture("Data/datapersonnage.txt")
         self.liane=0
         self.data=data[0]
         self.x=pose[1]*64
@@ -259,15 +258,15 @@ class player():
         self.speedxmax=self.speedx*4.5
         self.speedy=0
         self.image=data[0][self.type]
-        self.imgimo=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"\A1.png"),(64,64))
+        self.imgimo=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"/A1.png"),(64,64))
         self.imgimoret=pygame.transform.flip(self.imgimo,True,False)
-        self.img1=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"\A2.png"),(64,64))
+        self.img1=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"/A2.png"),(64,64))
         self.img1ret=pygame.transform.flip(self.img1,True,False)
-        self.img2=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"\A3.png"),(64,64))
+        self.img2=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"/A3.png"),(64,64))
         self.img2ret=pygame.transform.flip(self.img2,True,False)
-        self.img3=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"\A4.png"),(64,64))
+        self.img3=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"/A4.png"),(64,64))
         self.img3ret=pygame.transform.flip(self.img3,True,False)
-        self.img4=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"\A5.png"),(64,64))
+        self.img4=pygame.transform.scale(pygame.image.load(self.data[self.type][0]+"/A5.png"),(64,64))
         self.img4ret=pygame.transform.flip(self.img3,True,False)
         self.jump=0
         self.hp=int(self.data[self.type][1])
@@ -337,7 +336,6 @@ def main(level,niv,screen,Ally):
         for i in range(len(etagetest.niveaudata.datasalle)):
             for j in range(len(etagetest.niveaudata.datasalle[i])):
                 if etagetest.niveaudata.datasalle[i][j][2:4]=="05":
-                    print(1)
                     screen.blit( trapopen,((j)*64,(i)*64))
                 else:
                     screen.blit(etagetest.niveaudata.dataimg[i][j],((j)*64,(i)*64))
@@ -455,7 +453,6 @@ def main(level,niv,screen,Ally):
                     Ally[0].speedy=-25
                     Ally[0].jump=1
                 if keyboard.is_pressed("a"):
-                    print(Ally[0].x,Ally[0].y)
                 if keyboard.is_pressed("s"):
                         
         
@@ -478,7 +475,6 @@ def main(level,niv,screen,Ally):
         testvalidity=1
         if etagetest.niveaudata.enemy!=[]:
             for i in etagetest.niveaudata.enemy:
-                print(i.aggresivity)
                 if i.aggresivity==1:
                     testvalidity=0
         if testvalidity==1:
@@ -671,8 +667,7 @@ def main(level,niv,screen,Ally):
             for i in etagetest.niveaudata.choice:
                
                 if int(i[1][1]/64)==Ally[0].ys[0] and (int(i[1][0]/64)==Ally[0].xs[0] or int(i[1][0]/64)==Ally[0].xs[0]):
-                    print
-                    screen.blit(pygame.transform.scale(pygame.image.load("Data\choice\A"+str(i[2])+".png"),(9*64,5*64)),(5*64,2*64))
+                    screen.blit(pygame.transform.scale(pygame.image.load("Data/choice/A"+str(i[2])+".png"),(9*64,5*64)),(5*64,2*64))
                     if keyboard.is_pressed("z"):
                         Ally[0]=player(etagetest.niveaudata.inpose,i[2])
                         for i in range(3):

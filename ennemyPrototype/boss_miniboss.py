@@ -9,7 +9,7 @@ class BobLeGlorieux:
         self.dmg = 10**25
         self.mv = 0.03
         self.state = True
-        self.sprite_base = "Ennemis\Bob\Bob"
+        self.sprite_base = "Ennemis/Bob/Bob"
         self.sprite = pygame.image.load(self.sprite_base+"1.png")
         
     def gloriousCharge(self,counter):
@@ -30,7 +30,7 @@ class Design_original:
         self.mv = 0.3
         self.state = True
         self.direction = 'r'
-        self.sprite_base = "Ennemis\DESIGN_ORIGINAL.PNG\DESIGN_ORIGINAL"
+        self.sprite_base = "Ennemis/DESIGN_ORIGINAL.PNG/DESIGN_ORIGINAL"
         self.sprite = pygame.transform.scale(pygame.image.load(self.sprite_base+"1.png"),(64,64))
         
     def change2Sprite(self,counter,total_counter,transition_point):
@@ -102,12 +102,9 @@ def buttonActivation(Bouton,px,py,counter):
 def defeatBoss(design_original, br):
     if br == 1:
         design_original.mv+=0.1
-        design_original.sprite_base = "Ennemis\DESIGN_ORIGINAL.PNG\DESIGN_ORIGINAL_angry"
+        design_original.sprite_base = "Ennemis/DESIGN_ORIGINAL.PNG/DESIGN_ORIGINAL_angry"
     if br == 0:
         design_original.state = False
-        print("margaret tatcher is dead, ding dong the wicked bitch is dead")
-    else:
-        print("JOE BAMA ")
         
 def countRemainingButon(list_buton):
     return len(list_buton)

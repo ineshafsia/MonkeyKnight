@@ -36,7 +36,6 @@ while continu>0:
             continu=0
         if event.type== pygame.MOUSEBUTTONUP:
             pos = pygame.mouse.get_pos()
-            #print(pos)
         if play==0:
             if pos[0]>406 and pos[0]<581:
                 if pos[1]>517 and pos[1]<593:
