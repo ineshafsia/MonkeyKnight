@@ -1,0 +1,6 @@
+Ennemis\Scout\Scout 10 100 0.25 True 1
+Ennemis\Elfe\Elfe 10 100 0.2 True 1
+Ennemis\Chaman_ennemi\Chaman_ennemi 15 75 0 True 2
+Ennemis\Cafard\Cafard 15 200 0.2 False 0
+Ennemis\Abeille\Abeille 10 100 0.3 False 0
+Ennemis\Mante\Mante 20 150 0.25 True 3
