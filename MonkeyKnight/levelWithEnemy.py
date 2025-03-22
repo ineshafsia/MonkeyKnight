@@ -403,7 +403,13 @@ def main(level,niv,screen,Ally):
                           else:
                               etagetest.niveaudata.dmg.append(att(time,dmg,effect))
                   elif event.key == pygame.K_f:
-                          dmg,effect,time=(attack.choice2(Ally[0],Ally[0].type,Ally[0].xs,Ally[0].ys,Ally[0].direction))
+                          dmg,effect,time=(attack.choice2(
+                               Ally[0],
+                               Ally[0].type,
+                               Ally[0].xs,
+                               Ally[0].ys,
+                               Ally[0].direction)
+                               )
                           if effect[0]=="other":
                               for i in effect:
 
@@ -430,9 +436,8 @@ def main(level,niv,screen,Ally):
                     Ally[0].speedy=-25
                     Ally[0].jump=1
                 if keyboard.is_pressed("a"):
+                    print("user pressed 'a'; no idea what I should do with that")
                 if keyboard.is_pressed("s"):
-                        
-        
                         if etagetest.niveaudata.datasalle[Ally[0].ys[1]+1][Ally[0].xs[0]][2:4]!="01" and etagetest.niveaudata.datasalle[Ally[0].ys[1]+1][Ally[0].xs[1]][2:4]!="01":
                             Ally[0].speedy+=1
         
@@ -471,9 +476,14 @@ def main(level,niv,screen,Ally):
             if testvalidity==1 and etagetest.niveaudata.datasalle[Ally[0].ys[1]][Ally[0].xs[1]][2:4]=="03":
                 return(1,etagetest.niv)
                 
-        
         if keyboard.is_pressed("a"):
-            etagetest.niveaudata.dmg=(attack.choice(Ally[0].type,Ally[0].xs,Ally[0].ys,Ally[0].direction))
+            etagetest.niveaudata.dmg=(attack.choice(
+                 Player=Ally[0].type,
+                 typ=Ally[0].type,
+                 xs=Ally[0].xs,
+                 ys=Ally[0].ys,
+                 direction=Ally[0].direction
+                 ))
                             
         if Ally[0].speedx!=0:
             

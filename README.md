@@ -13,4 +13,3 @@ go to folder /MonkeyKnight and run `python3 main.py`
 
 
 # TODO
-- fix movements

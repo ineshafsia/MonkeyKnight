@@ -705,4 +705,3 @@ def main(level,niv,screen,Ally):
         clock.tick(60)
         if Ally[0].hp<1:
             return(1,0)
-

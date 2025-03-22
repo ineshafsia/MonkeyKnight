@@ -16,12 +16,12 @@ clock.tick(60)
 ally=[]
 play=0
 pos=[0,0]
+
 while continu>0:
     for event in pygame.event.get():
         if niveau==0:
             if time<15:
                 screen.blit(image,(0,0))
-                
             else:
                 screen.blit(image2,(0,0))
             
@@ -29,13 +29,16 @@ while continu>0:
             if time==30:
                 time=0
             time+=1
+
         if play==2:
                 screen.blit(image3,(0,0))
                 pygame.display.flip()
         if event.type == pygame.QUIT:
             continu=0
+
         if event.type== pygame.MOUSEBUTTONUP:
             pos = pygame.mouse.get_pos()
+
         if play==0:
             if pos[0]>406 and pos[0]<581:
                 if pos[1]>517 and pos[1]<593:
@@ -43,6 +46,7 @@ while continu>0:
             if pos[0]>664 and pos[0]<869:
                 if pos[1]>521 and pos[1]<592:
                     continu=0
+
         if play==2:
             if pos[0]>450 and pos[0]<830:
                 if pos[1]>516 and pos[0]<582:
@@ -53,17 +57,17 @@ while continu>0:
                     time=0
                     ally=[]
                     play=0
+
         if play==1:
             if niveau==0:
                     delta=levelWithEnemy.main("Chooselevel.txt",[],screen,ally)
                     niveau+=1
+
             if niveau>0:
-                    
                 (continu,lastlevel)=levelWithEnemy.main(save[lev][0],niv,screen,ally)
                 
                 if lastlevel==0:
                         play=2
-                        ("So long gay bowser")
                 else:
                     niv.append(lastlevel)
                     niveau+=1
