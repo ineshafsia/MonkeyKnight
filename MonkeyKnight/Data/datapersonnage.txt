@@ -1,1 +1,0 @@
-data/singe/Monkey,50,3,10@data/singe/guenon,40,3,5@data/singe/tue-marin,25,4,15@data/singe/babouin,50,2,10@data/singe/ouistitigre,40,3,10@data/singe/guenon,55,3,5@data/singe/guerille,30,2,10@data/singe/guenon,70,5,10
