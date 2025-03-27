@@ -1,11 +1,13 @@
 # To run this project
 
 - ensure you are using UNIX; Macintosh OS or WSL (if you use Windows OS)
-- have python installed (latest)
+- have python3 installed
 - run the following commands :
-    - python -m venv venv
+    - python3 -m venv venv
     - source venv/bin/activate
     - pip install -r requirements.txt
+    - cd MonkeyKnight
+    - python3 main.py
 
 then you can run the game : 
 
