@@ -2,7 +2,6 @@ import pygame
 from random import choice,randint
 import attack
 from math import cos
-from typing import List
 
 #class updated by thomas
 class enemy():
@@ -12,7 +11,7 @@ class enemy():
         self.xs=[x,x+1]
         self.ys=[y,y+1]
         self.type=typ
-        dataenemy,none=ouverture("data/dataenemy.txt")
+        dataenemy, none=ouverture("data/dataenemy.txt")
         self.imgimo=pygame.transform.scale(pygame.image.load(dataenemy[self.type-1][0]+"/A1.png"),(64,64))
         self.imgimoret=pygame.transform.flip(self.imgimo,True,False)
         self.img1=pygame.transform.scale(pygame.image.load(dataenemy[self.type-1][0]+"/A2.png"),(64,64))

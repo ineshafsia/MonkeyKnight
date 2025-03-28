@@ -64,8 +64,6 @@ class enemy():
             if (self.xs[0]==Ally[0].xs[0] or self.xs[0]==Ally[0].xs[1]) or (self.xs[1]==Ally[0].xs[0] or self.xs[1]==Ally[0].xs[1]):
                 if (self.ys[0]==Ally[0].ys[0] or self.ys[0]==Ally[0].ys[1]) or (self.ys[1]==Ally[0].ys[0] or self.ys[1]==Ally[0].ys[1]):
                     Ally[0].hp-=i.dgt
-                    
-
     
     def get_TOD(self,counter):
         self.TOD = counter
@@ -83,7 +81,7 @@ class enemy():
                 elif counter%120>=60:
                     pass
 
-def enemyAttack(xs,ys,pos,typ):
+def enemyAttack(xs: int, ys: int, pos, typ):
     if typ==1:
         return coupbasique(xs,ys,pos,"Data/attaque/fistD.png",("None"),20)
     elif typ==2:
